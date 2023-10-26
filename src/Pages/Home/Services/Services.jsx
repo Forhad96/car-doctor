@@ -8,7 +8,7 @@ const Services = () => {
   const [loading,setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("/service.json")
+    fetch("http://localhost:4000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
       setLoading(false)
@@ -17,7 +17,7 @@ const Services = () => {
   if(loading){
     return <Loading></Loading>
   }
-  console.log(services);
+
   return (
     <div>
       <p className="text-xl font-bold text-primary text-center">About Us</p>
